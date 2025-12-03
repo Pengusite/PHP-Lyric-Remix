@@ -1,5 +1,6 @@
-/*Catanghal, Justine Chollo C | CYB 201*/
+/* Catanghal, Justine Chollo C | CYB 201 */
 
+/*MAIN LAYOUT*/
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-image: url('https://i.redd.it/gg3ket5y5qr31.jpg');
@@ -38,6 +39,91 @@ h2 {
     padding-bottom: 10px;
 }
 
+/*Navigation Bar Styles*/
+.nav-bar {
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 20px; 
+}
+
+.nav-bar a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    margin: 0 10px;
+    font-size: 1.1em;
+    padding: 8px 12px;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.nav-bar a:not(.checkout-btn):hover {
+    background-color: #3B4CCA; 
+    color: #FFDE00; 
+}
+
+.nav-bar a.checkout-btn {
+    background-color: #CC0000; 
+    color: white;
+    border: 2px solid #CC0000;
+    border-radius: 20px; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.nav-bar a.checkout-btn:hover {
+    background-color: white;
+    color: #CC0000;
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 8px rgba(0,0,0,0.2);
+}
+
+/*STOCK PAGE TABLE*/
+.stock-table {
+width: 100%;
+border-collapse: collapse; 
+margin-top: 20px;
+background-color: white;
+font-size: 1.1em;
+box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+}
+
+.stock-table thead tr {
+    background-color: #CC0000;
+    color: white;
+    text-align: left;
+}
+
+.stock-table th {
+    padding: 12px 15px;
+    border: 1px solid #990000; 
+}
+
+.stock-table td {
+    padding: 12px 15px;
+    border: 1px solid #dddddd; 
+    color: #333;
+}
+
+.stock-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.stock-table tbody tr:hover {
+    background-color: #ffe6e6; 
+    cursor: default;
+}
+
+.highlight-yes {
+    color: #CC0000;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.highlight-no {
+    color: green;
+    font-weight: bold;
+}
+
 /*CARD STYLES*/
 .poke-card {
     border: 2px solid #ffcb05;
@@ -58,27 +144,8 @@ h2 {
     text-align: center;
 }
 
-/*TABLE & LIST STYLES*/
-.price-list {
-    background-color: #f9f9f9;
-    width: 100%;
-    padding: 15px;
-    border-radius: 5px;
-    margin-top: 10px;
-}
-
-.price-row {
-    font-size: 1.1em;
-    padding: 5px 0;
-    border-bottom: 1px dashed #ccc;
-}
-
-/*STATUS BOX STYLES*/
-.status-box {
-    margin-left: 20px;
-    flex-grow: 1;
-}
-
+/*STATUS & COLORS*/
+.status-box { margin-left: 20px; flex-grow: 1; }
 .status-text {
     font-size: 1.2em;
     font-weight: bold;
@@ -87,56 +154,33 @@ h2 {
     background-color: #f0f0f0;
     display: inline-block;
 }
-
 .green { color: green; border: 1px solid green; }
 .orange { color: #d35400; border: 1px solid #d35400; }
 .red { color: red; border: 1px solid red; }
 
-/*HOME PAGE SPECIFIC STYLES*/
+/*HOME PAGE STYLES*/
 .hero-section {
     background: linear-gradient(to right, #3B4CCA, #2a3a99);
-    color: white;
-    padding: 40px;
-    text-align: center;
-    border-radius: 10px;
-    margin-bottom: 30px;
+    color: white; padding: 40px; text-align: center; border-radius: 10px; margin-bottom: 30px;
 }
-
 .promo-box {
-    border: 3px dashed #CC0000;
-    background-color: #fff5f5;
-    padding: 20px;
-    margin: 20px 0;
-    text-align: center;
-    border-radius: 15px;
+    border: 3px dashed #CC0000; background-color: #fff5f5; padding: 20px; margin: 20px 0; text-align: center; border-radius: 15px;
 }
+.grid-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+.tip-bar { background-color: #ffcb05; padding: 10px; text-align: center; font-weight: bold; border-radius: 5px; margin-bottom: 20px; color: #333; }
+.badge-list { text-align: center; margin-top: 30px; padding: 20px; background: #f4f4f4; border-radius: 10px; }
 
-.grid-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
+/*ABOUT & BROWSE PAGE STYLES*/
+.filter-bar { text-align: center; margin-bottom: 20px; }
+.filter-btn { padding: 5px 15px; background: #eee; margin: 0 5px; border-radius: 15px; display: inline-block; }
+.role-card { background: #f9f9f9; padding: 10px; margin: 5px 0; border-left: 5px solid #ffcb05; }
+.faq-box { margin-bottom: 15px; border-bottom: 1px dashed #ccc; padding-bottom: 10px; }
 
-.tip-bar {
-    background-color: #ffcb05;
-    padding: 10px;
-    text-align: center;
-    font-weight: bold;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    color: #333;
-}
+/*FORMS (Checkout)*/
+.form-group { margin-bottom: 15px; }
+input[type="text"], select { width: 95%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
 
-.badge-list {
-    text-align: center;
-    margin-top: 30px;
-    padding: 20px;
-    background: #f4f4f4;
-    border-radius: 10px;
-}
-
-/* --- FOOTER STYLES --- */
+/*FOOTER STYLES*/
 .footer {
     margin-top: 40px;
     padding-top: 20px;
@@ -145,17 +189,6 @@ h2 {
     color: #555;
     font-size: 0.9em;
 }
-
-.footer p {
-    margin: 5px 0;
-}
-
-.footer a {
-    color: #CC0000;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.footer a:hover {
-    text-decoration: underline;
-}
+.footer p { margin: 5px 0; }
+.footer a { color: #CC0000; text-decoration: none; font-weight: bold; }
+.footer a:hover { text-decoration: underline; }
